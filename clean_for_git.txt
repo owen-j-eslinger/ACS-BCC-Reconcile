@@ -1,0 +1,12 @@
+Add this to your local .git/config (it is a tab before "clean")
+_____
+[filter "strip-notebook-output"]
+    clean = "jupyter nbconvert --ClearOutputPreprocessor.enabled=True --ClearMetadataPreprocessor.enabled=True --to=notebook --stdin --stdout --log-level=ERROR"
+_____
+
+============================================================
+Create a .gitattributes file in your directory with notebooks, with this content:
+
+_____
+*.ipynb filter=strip-notebook-output
+_____
